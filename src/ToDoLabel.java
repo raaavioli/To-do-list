@@ -1,6 +1,6 @@
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 
 /**
  * A todoLabel is a label/box arranged in the "todoList".
@@ -14,10 +14,9 @@ public class ToDoLabel implements Comparable<ToDoLabel>{
     private boolean completed;
     private int priority;
 
-    public ToDoLabel(String headtext, int priority, Date duedate, String... description){
+    public ToDoLabel(String headtext, Date duedate, String... description){
         this.headtext = headtext;
         this.duedate = duedate;
-        this.priority = priority;
         this.completed = false;
         this.description = new ArrayList<>();
         Collections.addAll(this.description, description);
@@ -74,13 +73,42 @@ public class ToDoLabel implements Comparable<ToDoLabel>{
      */
     @Override
     public int compareTo(ToDoLabel o) {
-        if(this.completed && !o.isCompleted()){
-            return -1;
-        }else if(this.completed && o.isCompleted()){
-            return this.duedate.compareTo(o.duedate);
-        }else if((!this.completed && o.isCompleted())) {
+        if(completed && !o.isCompleted()){
             return 1;
+        }else if(completed && o.isCompleted()){
+            return duedate.compareTo(o.getDuedate());
+        }else if((!completed && o.isCompleted())) {
+            return -1;
         }
-        return Integer.compare(this.priority, o.priority);
+        return Integer.compare(priority, o.getPriority());
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Headtext: ");
+        sb.append(headtext);
+        sb.append("\n");
+        sb.append("Date: ");
+        sb.append(duedate.toString());
+        sb.append("\n");
+        sb.append("Priority: ");
+        sb.append(priority);
+        sb.append("\n");
+        sb.append("Completed: ");
+        if(isCompleted()){
+            sb.append("[X]");
+        }else{
+            sb.append("[ ]");
+        }
+        sb.append("\n");
+        sb.append("Description:");
+        sb.append("\n");
+        for (String st: description) {
+            sb.append("   - ");
+            sb.append(st);
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

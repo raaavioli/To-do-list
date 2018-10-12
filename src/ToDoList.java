@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 
 public class ToDoList{
@@ -10,6 +11,63 @@ public class ToDoList{
     public ToDoList(ToDoLabel... labels){
         labelList = new ArrayList<>();
         Collections.addAll(labelList, labels);
+        sortByPriority();
+    }
+
+    public static void main(String[] args) {
+        ToDoLabel l1 = new ToDoLabel(
+                "Envarre Lab1",
+                new Date(2018, 7, 10),
+                "uppgift 1-5", "fixa LateX"
+        );
+
+        l1.toggleCompleted();
+
+        ToDoLabel l4 = new ToDoLabel(
+                "Envarre Lab1",
+                new Date(2018, 7, 10),
+                "uppgift 1-5", "fixa LateX"
+        );
+
+        l4.toggleCompleted();
+
+        ToDoLabel l5 = new ToDoLabel(
+                "Envarre Lab1",
+                new Date(2018, 7, 10),
+                "uppgift 1-5", "fixa LateX"
+        );
+
+        l5.toggleCompleted();
+
+        ToDoLabel l2 = new ToDoLabel(
+                "Db inl",
+                new Date(2018, 2, 41),
+                "do it quick", "now!!!!"
+        );
+
+        ToDoLabel l3 = new ToDoLabel(
+                "Nuwuwu Lab",
+                new Date(2020, 2, 29)
+        );
+
+        ToDoLabel l6 = new ToDoLabel(
+                "Envarre Lab1",
+                new Date(2018, 2, 29),
+                "uppgift 1-5", "fixa LateX"
+        );
+
+        ToDoList list = new ToDoList(l1, l2, l3, l4, l5, l6);
+
+        list.changeLabelPosition(0,5);
+        list.changeLabelPosition(2,1);
+        list.changeLabelPosition(2,0);
+
+        /**
+         * Den beter sig inte som väntat, kika på detta senare
+         */
+
+
+        System.out.println(list.toString());
     }
 
     public void addLabel(ToDoLabel label){
@@ -28,18 +86,15 @@ public class ToDoList{
         ToDoLabel label = labelList.get(from);
         if(!label.isCompleted()){
             int c = getFirstCompletedLabel();
-            if(to <= c) {
-                if(from > to) {
-                    label = labelList.remove(from);
-                    labelList.add(to, label);
-                }else{
-                    labelList.add(to, label);
-                    labelList.remove(from);
-                }
+            if(to < c){
+                label = labelList.remove(from);
+                labelList.add(to, label);
             }else{
                 labelList.add(c, label);
                 labelList.remove(from);
             }
+        } else {
+            throw new IllegalArgumentException("Cannot move completed task");
         }
         prioritizeByOrder();
     }
@@ -62,5 +117,16 @@ public class ToDoList{
 
     public void sortByPriority(){
         Collections.sort(labelList);
+        prioritizeByOrder();
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for (ToDoLabel label: labelList) {
+            sb.append(label.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
