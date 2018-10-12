@@ -58,16 +58,18 @@ public class ToDoList{
 
         ToDoList list = new ToDoList(l1, l2, l3, l4, l5, l6);
 
-        list.changeLabelPosition(0,5);
-        list.changeLabelPosition(2,1);
-        list.changeLabelPosition(2,0);
-
-        /**
-         * Den beter sig inte som väntat, kika på detta senare
-         */
-
+                                        // A, B, C
+        list.changeLabelPosition(0,5);  // B, C, A
+        list.changeLabelPosition(2,1);  // B, A, C
+        list.changeLabelPosition(2,0);  // C, B, A
 
         System.out.println(list.toString());
+    }
+
+    public ToDoLabel removeLabel(int index){
+        ToDoLabel label = labelList.remove(index);
+        prioritizeByOrder();
+        return label;
     }
 
     public void addLabel(ToDoLabel label){
