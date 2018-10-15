@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="contour">#505050</color>
+    <color name="highlight">#ffffff</color>
+    <color name="chill">#9bd7d5</color>
+    <color name="intense">#129793</color>
+</resources>

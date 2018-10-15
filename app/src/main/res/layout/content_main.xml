@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="se.kth.olieri.todolist.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll1"
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="300dp"
+            android:layout_marginTop="60dp"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/holo_purple"
+                        android:text="Food"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:text="Food"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@android:drawable/ic_input_add" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/scroll1"
+            android:layout_toEndOf="@+id/scroll1"
+            android:layout_toRightOf="@+id/scroll1"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/intense"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/headtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Headtext"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/due"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/date"
+                        android:layout_alignBottom="@+id/date"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toLeftOf="@+id/date"
+                        android:layout_toStartOf="@+id/date"
+                        android:text="Due: " />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:text="2018-05-01" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/headtext"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="15dp"
+                        android:text="Completed" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginBottom="20dp"
+                    android:alpha="0.6"
+                    android:background="@color/contour"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/headtext1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Headtext"
+                        android:textColor="@color/chill"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/due1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/date1"
+                        android:layout_alignBottom="@+id/date1"
+                        android:layout_toLeftOf="@+id/date1"
+                        android:layout_toStartOf="@+id/date1"
+                        android:text="Due: "
+                        android:textColor="@color/chill" />
+
+                    <TextView
+                        android:id="@+id/date1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/completed"
+                        android:layout_alignBottom="@+id/completed"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/completed"
+                        android:layout_toStartOf="@+id/completed"
+                        android:text="2018-05-01"
+                        android:textColor="@color/chill" />
+
+                    <TextView
+                        android:id="@+id/completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toLeftOf="@+id/completed1"
+                        android:layout_toStartOf="@+id/completed1"
+                        android:text="Completed: "
+                        android:textColor="@color/chill" />
+
+                    <TextView
+                        android:id="@+id/completed1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/completed"
+                        android:layout_alignBottom="@+id/completed"
+                        android:layout_alignEnd="@+id/checkBox1"
+                        android:layout_alignRight="@+id/checkBox1"
+                        android:text="2018-05-01"
+                        android:textColor="@color/chill" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/headtext1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="12dp"
+                        android:checked="true"
+                        android:text="Completed"
+                        android:textColor="@color/chill" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
