@@ -8,7 +8,8 @@
     tools:context="se.kth.olieri.todolist.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <RelativeLayout android:id="@+id/content_container"
+    <RelativeLayout
+        android:id="@+id/content_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,11 +17,11 @@
             android:id="@+id/scroll1"
             android:layout_width="61dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="300dp"
             android:layout_marginTop="60dp"
             android:paddingTop="20dp">
 
-            <LinearLayout android:id="@+id/list_container"
+            <LinearLayout
+                android:id="@+id/list_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -31,7 +32,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TextView
+                    <!--<TextView  Examples of list-element views
                         android:id="@+id/textView5"
                         android:layout_width="60dp"
                         android:layout_height="30dp"
@@ -47,7 +48,8 @@
                         android:layout_marginBottom="10dp"
                         android:background="@android:color/holo_orange_dark"
                         android:text="Food"
-                        android:textAlignment="center" />
+                        android:textAlignment="center" />-->
+
                 </LinearLayout>
 
                 <ImageButton
@@ -200,5 +202,171 @@
             </LinearLayout>
 
         </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/intense_toned">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/intense"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:rotation="45">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="30dp"
+                        android:layout_height="3dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@color/contour" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="3dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/contour" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="List name:"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:maxLength="7"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Label color (#RRGGBB)"
+                android:textColor="@color/highlight"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0"
+                    android:text="R"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:maxLength="2"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0"
+                    android:text="G"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:maxLength="2"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0"
+                    android:text="B"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:maxLength="2"
+                    android:textColor="@color/highlight"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Create list" />
+        </LinearLayout>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

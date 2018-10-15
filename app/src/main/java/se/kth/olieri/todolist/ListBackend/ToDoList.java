@@ -1,7 +1,6 @@
 package se.kth.olieri.todolist.ListBackend;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 
 public class ToDoList{

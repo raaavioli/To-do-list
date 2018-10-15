@@ -4,4 +4,5 @@
     <color name="highlight">#ffffff</color>
     <color name="chill">#9bd7d5</color>
     <color name="intense">#129793</color>
+    <color name="intense_toned">#b4129793</color>
 </resources>

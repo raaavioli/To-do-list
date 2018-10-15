@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import se.kth.olieri.todolist.ListGUI.GUIViewCreator;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,33 +27,19 @@ public class MainActivity extends AppCompatActivity {
                 .findViewById(R.id.scroll1)
                 .findViewById(R.id.list_container)
                 .findViewById(R.id.listlayout);
-        layout.addView(createListView("Mat", 60, 30));
-        layout.addView(createListView("Plugg", 40, 30));
-        layout.addView(createListView("Övrigt", 40, 30));
-        layout.addView(createListView("Plugg", 40, 30));
-        layout.addView(createListView("Övrigt", 40, 30));
-        layout.addView(createListView("Plugg", 40, 30));
-        layout.addView(createListView("Övrigt", 40, 30));
+        layout.addView(GUIViewCreator.createListView(this, "Mat", getDPScale(40), getDPScale(30), getDPScale(10), "#111111"));
+        layout.addView(GUIViewCreator.createListView(this, "Hus", getDPScale(60), getDPScale(30), getDPScale(10), "#0000FF"));
+        layout.addView(GUIViewCreator.createListView(this, "Bra", getDPScale(40), getDPScale(30), getDPScale(10), "#00FF00"));
+        layout.addView(GUIViewCreator.createListView(this, "Mat", getDPScale(40), getDPScale(30), getDPScale(10), "#00FFFF"));
+        layout.addView(GUIViewCreator.createListView(this, "Mat", getDPScale(40), getDPScale(30), getDPScale(10), "#FF0000"));
+        layout.addView(GUIViewCreator.createListView(this, "Mat", getDPScale(40), getDPScale(30), getDPScale(10), "#FF00FF"));
+        layout.addView(GUIViewCreator.createListView(this, "Mat", getDPScale(40), getDPScale(30), getDPScale(10), "#FFFF00"));
+        layout.addView(GUIViewCreator.createListView(this, "Mat", getDPScale(40), getDPScale(30), getDPScale(10), "#DDDDDD"));
+
+
     }
 
-    private TextView createListView(String name, int width, int height){
-        TextView view = new TextView(this);
-        view.setText(name);
-        view.setBackgroundColor(Color.parseColor("#00FF00"));
-        view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
-        ViewGroup.MarginLayoutParams params =  (ViewGroup.MarginLayoutParams)
-                new ViewGroup.MarginLayoutParams(
-                        getDPScale(width),
-                        getDPScale(height)
-                );
-        params.setMargins(0, 0, 0, getDPScale(10));
-        view.setLayoutParams(params);
-
-        return view;
-    }
-
-    private int getDPScale(int dps){
+    public int getDPScale(int dps){
         final float scale = getResources().getDisplayMetrics().density;
         return (int) (dps * scale + 0.5f);
     }
